@@ -10,11 +10,9 @@ permalink: /get-started/codelab/
          style="border: 10px solid #333; border-radius: 10px; margin-bottom: 10px" >
 </figure>
 
-This is a guide to creating your first Flutter app. If you
-are familiar with object-oriented code and basic programming
-concepts such as variables, loops, and conditionals,
-you can complete this tutorial. You don’t need
-previous experience with Dart or mobile programming.
+이것은 첫 번째 Flutter 앱을 만드는 방법입니다.
+변수, 루프 및 조건과 같은 객체 지향 코드 및 기본 프로그래밍 개념에 익숙한 경우에 이 자습서를 완료 할 수 있습니다.
+Dart 또는 모바일 프로그래밍의 경험은 필요하지 않습니다.
 
 {% comment %}
 TODO: (maybe, but later)
@@ -27,86 +25,71 @@ TODO: (maybe, but later)
 * TOC
 {:toc}
 
-<p class="h2-like">What you'll build</p>
+<p class="h2-like">무엇을 만들것인가</p>
+스타트업 회사에 제안 된 이름을 생성하는 간단한 모바일 앱을 구현해 봅니다.
+사용자는 이름을 선택하고 선택을 해제하여 가장 좋은 이름을 저장할 수 있습니다.
+이 코드는 한 번에 10개의 이름을 생성합니다. 사용자가 스크롤하면 새로운 이름 배치가 생성됩니다. 사용자는 앱 표시 줄 오른쪽 상단에있는 목록 아이콘을 탭하여 즐겨찾기 된 이름만 나열된 새 경로로 이동할 수 있습니다.
 
-You’ll implement a simple mobile app that generates proposed names for a
-startup company. The user can select and unselect names,
-saving the best ones. The code generates ten names at a time.
-As the user scrolls, new batches of names are generated.
-The user can tap the list icon in the upper right of the app bar
-to move to a new route that lists only the favorited names.
-
-The animated GIF shows how the finished app works.
+이 애니메이션 GIF는 완성 된 앱의 작동 방식을 보여줍니다.
 
 <div class="whats-the-point" markdown="1">
 
-<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What you'll learn:</b>
+<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>배우게 될 것:</b>
 
-* Basic structure of a Flutter app.
-* Finding and using packages to extend functionality.
-* Using hot reload for a quicker development cycle.
-* How to implement a stateful widget.
-* How to create an infinite, lazily loaded list.
-* How to create and navigate to a second screen.
-* How to change the look of an app using Themes.
+* Flutter app의 기본구조.
+* 패키지를 찾아서 사용하여 기능을 확장합니다.
+* 더 빠른 개발 사이클을 위해 hot reload를 사용합니다. 
+* 상태위젯을 구현하는 방법.
+* 무한한 lazily loaded 목록을 만드는 법.
+* 두 번째 화면을 만들고 탐색하는 방법.
+* 테마를 사용하여 app의 모양을 변경하는 방법.
 
 </div>
 
 <div class="whats-the-point" markdown="1">
 
-<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What you'll use:</b>
+<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>사용할 것들:</b>
 
-You'll need to install the following:
+다음을 설치해야 합니다:
 
 <ul markdown="1">
 <li markdown="1"> Flutter SDK<br>
-    The Flutter SDK includes Flutter's engine, framework, widgets, tools,
-    and a Dart SDK. This codelab requires v0.1.4 or later.
+    Flutter SDK에는 Flutter의 엔진, 프레임 워크, 위젯, 도구 및 Dart SDK가 포함되어 있습니다. 이 codelab은 v0.1.4 이상이 필요합니다.
 </li>
 <li markdown="1"> Android Studio IDE<br>
-    This codelab features the Android Studio IDE, but you can use
-    another IDE, or work from the command line.
+    이 codelab에는 Android Studio IDE가 있지만 다른 IDE를 사용하거나 명령 줄에서 작업 할 수 있습니다.
 </li>
-<li markdown="1"> Plugin for your IDE<br>
-    The Flutter and Dart plugins must be installed separately for your
-    IDE. Besides Android Studio, Flutter and Dart plugins are also available
-    for the [VS Code](https://code.visualstudio.com/download) and
-    [IntelliJ](https://www.jetbrains.com/idea/download/#section=mac) IDEs.
+<li markdown="1"> 당신의 IDE의 Plugin<br>
+    Flutter와 Dart 플러그인은 IDE에 별도로 설치해야합니다. Android Studio 외에 Flutter 및 Dart 플러그인도 [VS Code](https://code.visualstudio.com/download) 및 [IntelliJ](https://www.jetbrains.com/idea/download/#section=mac) IDE에서 사용할 수 있습니다.
 </li>
 </ul>
 
-See [Flutter Installation and Setup](/get-started/install/) for information on
-how to set up your environment.
+환경 설정 방법에 대한 정보는 [Flutter 설치 및 설정](/get-started/install/)을 참조하십시오.
+
 
 </div>
 
-# Step 1: Create the starting Flutter app
+# Step 1: Flutter 시작 app 만들기
 
-Create a simple, templated Flutter app, using the instructions in
-[Getting Started with your first Flutter app.](/get-started/test-drive/#create-app)
-Name the project **startup_namer** (instead of _myapp_).
-You’ll be modifying this starter app to create the finished app.
+[첫 Flutter app 시작하기](/get-started/test-drive/#create-app)의 지침에 따라 간단한 템플릿 기반 Flutter app을 만듭니다. 프로젝트의 이름을 **startup_namer** 로 지정하십시오 (_myapp_ 대신). 완료된 앱을 만들려면 이 시작 앱을 수정해야합니다.
 
-In this codelab, you'll mostly be editing **lib/main.dart**,
-where the Dart code lives.
+이 codelab에서는 다트 코드에 있는 **lib/main.dart** 를 주로 편집하게됩니다.
+
 
 <aside class="alert alert-success" markdown="1">
 <i class="fa fa-lightbulb-o"> </i> **Tip:**
-When pasting code into your app, indentation can
-become skewed. You can fix this automatically with the Flutter tools:
+앱에 코드를 붙여 넣을 때 들여 쓰기가 왜곡 될 수 있습니다. <br>
+이 문제는 Flutter 도구를 사용하여 자동으로 수정할 수 있습니다:
 
-* Android Studio / IntelliJ IDEA: Right-click the dart code and
-  select **Reformat Code with dartfmt**.
-* VS Code: Right-click and select **Format Document**.
-* Terminal: Run `flutter format <filename>`.
+* Android Studio / IntelliJ IDEA: 마우스 오른클릭 후 **Reformat Code with dartfmt** 를 선택합니다.
+* VS Code: 마우스 오른클릭 후 **Format Document** 를 선택합니다.
+* Terminal: `flutter format <filename>` 를 실행합니다.
 </aside>
 
 <ol markdown="1">
 
-<li markdown="1"> Replace `lib/main.dart`.<br>
-    Delete all of the code from **lib/main.dart**.
-    Replace with the following code, which displays "Hello World" in the center
-    of the screen.
+<li markdown="1"> `lib/main.dart` 를 변경합니다.<br>
+    **lib/main.dart**의 모든 코드를 삭제합니다. 그리고 화면 중앙에 "Hello World"를 표시하는 아래의 코드로 바꿉니다.
 
 {% prettify dart %}
 import 'package:flutter/material.dart';
@@ -132,39 +115,27 @@ class MyApp extends StatelessWidget {
 {% endprettify %}
 </li>
 
-<li markdown="1"> Run the app. You should see the following screen.
+<li markdown="1"> app을 실행하면 다음 화면이 나타납니다.
 
 <center><img src="images/hello-world-screenshot.png" alt="screenshot of hello world app"></center>
 </li>
 </ol>
 
-<p class="h2-like">Observations</p>
+<p class="h2-like">관찰</p>
 
   <ul markdown="1">
-  <li markdown="1"> This example creates a Material app.
-      [Material](https://material.io/guidelines/) is a visual design language
-      that is standard on mobile and the web. Flutter offers a rich set
-      of Material widgets.
+  <li markdown="1"> 이 예제는 Material app을 만듭니다. 
+      [Material](https://material.io/guidelines/)은 모바일과 웹에서 표준인 시각적인 디자인 언어 입니다. Flutter는 다양한 Material 위젯을 제공합니다.
   </li>
-  <li markdown="1"> The main method specifies fat arrow (`=>`) notation,
-       which is short hand used for one-line functions or methods.
+  <li markdown="1"> main 메소드는 굵은 화살표 (`=>`) 표기법을 지정하는데, 이는 한 줄짜리 함수 나 메소드에 단축으로 사용됩니다.
   </li>
-  <li markdown="1"> The app extends StatelessWidget which makes the app itself a
-       widget. In Flutter, almost everything is a widget, including
-       alignment, padding, and layout.
+  <li markdown="1"> 이 앱은 StatelessWidget을 확장하여 앱 자체를 위젯으로 만듭니다. Flutter에서는 거의 모든 위젯이 alignment, 패딩 및 레이아웃을 포함한 위젯입니다.
   </li>
-  <li markdown="1"> The Scaffold widget, from the Material library,
-       provides a default app bar, title, and a body property that
-       holds the widget tree for the home screen. The widget subtree
-       can be quite complex.
+  <li markdown="1"> Material 라이브러리의 Scaffold 위젯은 기본 앱 표시 줄, 제목 및 홈 화면의 위젯 트리를 포함하는 본문 속성을 제공합니다. 위젯 하위 트리는 상당히 복잡 할 수 있습니다.
   </li>
-  <li markdown="1"> A widget’s main job is to provide a `build()` method
-      that describes how to display the widget in terms of other,
-      lower level widgets.
+  <li markdown="1"> 위젯의 주된 역할은 다른 하위 레벨 위젯의 관점에서 위젯을 표시하는 방법을 설명하는 `build()` 메소드를 제공하는 것입니다.
   </li>
-  <li markdown="1"> The widget tree for this example consists of a Center widget
-       containing a Text child widget. The Center widget aligns its
-       widget subtree to the center of the screen.
+  <li markdown="1"> 이 예제의 위젯 트리는 Text 자식 위젯을 포함하는 Center 위젯으로 구성됩니다.Center 위젯은 하위 트리를 화면 가운데로 맞춥니다.
   </li>
 </ul>
 {% comment %}
@@ -211,23 +182,15 @@ class MyApp extends StatelessWidget {
 
 ---
 
-# Step 2: Use an external package
+# Step 2: 외부 패키지 사용하기
 
-In this step, you’ll start using an open-source package named
-**english_words**, which contains a few thousand of the most used
-English words plus some utility functions.
+이번 단계에서는 **english_words** 라는 open-source package를 사용하기 시작합니다. 이 패키지에는 가장 많이 사용되는 영어 단어 몇 가지와 약간의 유틸리티 함수가 포함되어 있습니다.
 
-You can find the
-[english_words](https://pub.dartlang.org/packages/english_words)
-package, as well as many other open source packages, on
-[pub.dartlang.org](https://pub.dartlang.org/flutter/).
+[pub.dartlang.org](https://pub.dartlang.org/flutter/)에서 [english_words](https://pub.dartlang.org/packages/english_words) 패키지와 다른 많은 오픈 소스 패키지를 찾을 수 있습니다.
 
 <ol markdown="1">
 
-<li markdown="1"> The pubspec file manages the assets for a Flutter app.
-    In **pubspec.yaml**, add **english_words** (3.1.0 or higher)
-    to the dependencies list.
-    The new line is highlighted below:
+<li markdown="1"> pubspec 파일은 Flutter app의 asset을 관리합니다. **pubspec.yaml**에서 dependencies 목록에 **english_words** (3.1.0 이상)를 추가하십시오. 아래에서 새로운 줄이 강조 표시됩니다.
 
 <!-- skip -->
 {% prettify dart %}
@@ -240,9 +203,7 @@ dependencies:
 {% endprettify %}
 </li>
 
-<li markdown="1"> While viewing the pubspec in Android Studio's editor view,
-    click **Packages get** upper right. This pulls the package into
-    your project. You should see the following in the console:
+<li markdown="1"> Android Studio의 편집기보기에서 pubspec을 보면서 오른쪽 상단에있는 **Packages get** 을 클릭합니다. 이 작업은 패키지를 프로젝트로 가져오게 됩니다. 콘솔에서는 아래와 같이 확인할 수 있습니다:
 
 <!-- skip -->
 {% prettify dart %}
@@ -252,8 +213,7 @@ Process finished with exit code 0
 {% endprettify %}
 </li>
 
-<li markdown="1"> In **lib/main.dart**, add the import for `english_words`,
-    as shown in the highlighted line:
+<li markdown="1"> **lib/main.dart** 에서 강조 표시된 행처럼 `english_words` import를 추가하세요:
 
 <!-- skip -->
 {% prettify dart %}
@@ -261,23 +221,18 @@ import 'package:flutter/material.dart';
 [[highlight]]import 'package:english_words/english_words.dart';[[/highlight]]
 {% endprettify %}
 
-As you type, Android Studio gives you suggestions for libraries to
-import. It then renders the import string in gray, letting you
-know that the imported library is unused (so far).
+Android Studio에서 입력 할 때, Android Studio는 import를 할 라이브러리에 대한 제안사항을 제공합니다. 회색으로 보여지는 import 문자열은 import된 라이브러리가 사용되지 않고 있음을 알려줍니다.
 </li>
 
-<li markdown="1"> Use the English words package to generate the text instead of
-    using the string "Hello World".
+<li markdown="1"> "Hello World" 문자열을 사용하는 대신 English words 패키지를 사용하여 텍스트를 생성하세요.
 
 <aside class="alert alert-success" markdown="1">
 <i class="fa fa-lightbulb-o"> </i> **Tip:**
-"Pascal case" (also known as "upper camel case"),
-means that each word in the string, including the first one,
-begins with an uppercase letter. So, "uppercamelcase" becomes
-"UpperCamelCase".
+"Pascal case" ("upper camel case"로 알려진)는 첫 번째 문자열을 포함하여 문자열의 각 단어가 대문자로 시작함을 의미합니다. 그래서, "uppercamelcase" 는 
+"UpperCamelCase" 가 됩니다.
 </aside>
 
-Make the following changes, as highlighted below:
+아래에 강조 표시된대로 다음과 같이 변경하세요:
 
 <!-- skip -->
 {% prettify dart %}
@@ -307,52 +262,34 @@ class MyApp extends StatelessWidget {
 {% endprettify %}
 </li>
 
-<li markdown="1"> If the app is running, use the hot reload button
-    (<img src="images/hot-reload-button.png" alt="lightning bolt icon">)
-    to update the running app. Each time you click hot reload,
-    or save the project, you should see a different word pair,
-    chosen at random, in the running app.
-    This is because the word pairing is generated inside the build
-    method, which is run each time the MaterialApp requires rendering,
-    or when toggling the Platform in Flutter Inspector.
+<li markdown="1"> 앱이 실행중인 경우 hot reload 버튼 (<img src="images/hot-reload-button.png" alt="lightning bolt icon">)을 사용하여 실행중인 앱을 업데이트합니다. hot reload를 클릭하거나 프로젝트를 저장할 때마다 실행중인 앱에서 임의로 선택한 다른 단어 쌍을 볼 수 있습니다. 이는 MaterialApp에서 렌더링이 필요하거나 Flutter Inspector에서 플랫폼을 토글 할 때마다 실행되는 build 메소드 내에서 단어 페어링이 생성되기 때문입니다.
 
 <center><img src="images/step2-screenshot.png" alt="screenshot at completion of second step"></center>
 </li>
 
 </ol>
 
-<p class="h2-like">Problems?</p>
+<p class="h2-like">문제점?</p>
 
-If your app is not running correctly, look for typos. If needed,
-use the code at the following links to get back on track.
+앱이 제대로 실행되지 않는 경우 오타를 찾으세요. 필요하다면, 다음 링크의 코드를 사용해 보세요.
 
 * [**pubspec.yaml**](https://gist.githubusercontent.com/Sfshaza/bb51e3b7df4ebbf3dfd02a4a38db2655/raw/57c25b976ec34d56591cb898a3df0b320e903b99/pubspec.yaml)
-(The **pubspec.yaml** file won't change again.)
+(**pubspec.yaml** file은 다시 변경되지 않습니다.)
 * [**lib/main.dart**](https://gist.githubusercontent.com/Sfshaza/bb51e3b7df4ebbf3dfd02a4a38db2655/raw/57c25b976ec34d56591cb898a3df0b320e903b99/main.dart)
 
 ---
 
-# Step 3: Add a Stateful widget
+# Step 3: 상태기반 위젯 추가
 
-State<em>less</em> widgets are immutable, meaning that their
-properties can’t change&mdash;all values are final.
+상태가 <em>없는</em> 위젯은 불변이므로, 해당 속성을 변경할 수 없음을 뜻하며, 모든 값은 최종값입니다.
 
-State<em>ful</em> widgets maintain state that might change
-during the lifetime of the widget. Implementing a stateful
-widget requires at least two classes: 1) a StatefulWidget class
-that creates an instance of 2) a State class. The StatefulWidget
-class is, itself, immutable, but the State class persists over the
-lifetime of the widget.
+상태<em>기반</em> 위젯은 위젯 lifetime 동안 변경될 수 있는 상태를 유지합니다. 상태기반 위젯을 구현하려면 최소 두개의 class가 필요합니다: 1) a StatefulWidget class
+that creates an instance of 2) a State class. StatefulWidget 클래스 자체는 불변이지만 State 클래스는 위젯 수명 기간 동안 지속됩니다.
 
-In this step, you’ll add a stateful widget, RandomWords, which creates
-its State class, RandomWordsState. The State class will eventually
-maintain the proposed and favorite word pairs for the widget.
+이 단계에서, State 클래스 인 RandomWordsState를 생성하는 상태기반 위젯인, RandomWords를 추가합니다. State 클래스는 결국 위젯에 대해 제안되고 좋아하는 단어 쌍을 유지합니다.
 
 <ol markdown="1">
-<li markdown="1"> Add the stateful RandomWords widget to main.dart.
-    It can go anywhere in the file, outside of MyApp, but the solution
-    places it at the bottom of the file. The RandomWords widget does little
-    else besides creating its State class:
+<li markdown="1"> main.dart에 상태기반 RandomWords 위젯을 추가 합니다. 이것은 MyApp 외부의 파일에서 어디든 갈 수 있지만, 이 해결책은 파일의 맨 아래에 배치합니다. RandomWords 위젯은 State 클래스를 생성하는 것 외에는 거의하지 않습니다:
 
 <!-- skip -->
 {% prettify dart %}
@@ -363,15 +300,12 @@ class RandomWords extends StatefulWidget {
 {% endprettify %}
 </li>
 
-<li markdown="1"> Add the RandomWordsState class. Most of the
-    app’s code resides in this class, which maintains the state for the
-    RandomWords widget. This class will save the generated word pairs,
+<li markdown="1"> RandomWordsState 클래스 추가합니다. 대부분의 앱 코드는 RandomWords 위젯의 상태를 유지하는 클래스에 상주합니다. This class will save the generated word pairs,
     which grow infinitely as the user scrolls, and also favorite
     word pairs, as the user adds or removes them from the list by
     toggling the heart icon.
 
-You’ll build this class bit by bit. To begin, create a minimal
-class by adding the highlighted text:
+이 클래스는 비트 단위로 빌드합니다. 시작하려면, 강조 표시된 텍스트를 추가하여 최소 클래스를 만듭니다:
 
 <!-- skip -->
 {% prettify dart %}
@@ -380,13 +314,9 @@ class by adding the highlighted text:
 {% endprettify %}
 </li>
 
-<li markdown="1"> After adding the state class, the IDE complains that
-    the class is missing a build method. Next, you'll add a basic
-    build method that generates the word pairs by moving the
-    word generation code from MyApp to RandomWordsState.
+<li markdown="1"> 상태 클래스가 추가된 후, IDE는 클래스는 build 메서드가 빠져있는 걸 알려줍니다. 다음으로 단어 생성 코드를 MyApp에서 RandomWordsState로 이동하여 단어 쌍을 생성하는 기본 build 메서드를 추가합니다.
 
-Add the build method to RandomWordState, as shown
-by the highlighted text:
+강조표시된 텍스트와 같이, RandomWordState에 build 메서드를 추가합니다:
 
 <!-- skip -->
 {% prettify dart %}
@@ -400,8 +330,7 @@ class RandomWordsState extends State<RandomWords> {
 {% endprettify %}
 </li>
 
-<li markdown="1"> Remove the word generation code from MyApp by making
-    the highlighted changes below:
+<li markdown="1"> 아래에서 강조표시된 변경사항을 적용하여 MyApp에서 단어 생성 코드를 제거하십시오.
 
 <!-- skip -->
 {% prettify dart %}
@@ -429,7 +358,7 @@ class MyApp extends StatelessWidget {
 
 </ol>
 
-Restart the app. If you try to hot reload, you might see a warning:
+앱을 다시 시작합니다. hot reload를 시도 시, 경고가 표시 될 수 있습니다:
 
 {% prettify sh %}
 Reloading...
@@ -437,39 +366,31 @@ Not all changed program elements ran during view reassembly; consider
 restarting.
 {% endprettify %}
 
-It may be a false positive, but consider restarting in order to make sure
-that your changes are reflected in the app's UI.
+거짓양성(false positive)일 수도 있지만, 변경 사항이 앱의 UI에 반영되었는지 확인하기 위해 다시 시작하는 것이 좋습니다.
 
-The app should behave as before, displaying a word
-pairing each time you hot reload or save the app.
+app을 hot reload 하거나 저장할 때마다 단어가 페어링되어 이전과 같이 작동해야 합니다.
 
 <center><img src="images/step3-screenshot.png" alt="screenshot at completion of third step"></center>
 
-<p class="h2-like">Problems?</p>
+<p class="h2-like">문제점?</p>
 
-If your app is not running correctly, you can use the code
-at the following link to get back on track.
+app이 제대로 실행되지 않는다면, 다음 링크의 코드를 사용해 보세요:
 
 * [**lib/main.dart**](https://gist.githubusercontent.com/Sfshaza/d7f13ddd8888556232476be8578efe40/raw/329c397b97309ce99f834bf70ebb90778baa5cfe/main.dart)
 
 ---
 
-# Step 4: Create an infinite scrolling ListView
+# Step 4: 무한 스크롤 ListView 만들기
 
-In this step, you'll expand RandomWordsState to generate
-and display a list of word pairings. As the user scrolls, the list
-displayed in a ListView widget, grows infinitely. ListView's
-`builder` factory constructor allows you to build a list view
-lazily, on demand.
+이 단계에서는 RandomWordsState를 확장하여 단어 쌍 list를 생성하고 표시합니다. 사용자가 스크롤 할 때 ListVie 위젯에 표시된 list는 무한히 커집니다. ListView의 `builder` factory 생성자를 사용하면 필요할 때 list view를 lazy 하게 build 할 수 있습니다.
 
 <ol markdown="1">
 
-<li markdown="1"> Add a `_suggestions` list to the RandomWordsState
-class for saving suggested word pairings. The variable begins with
+<li markdown="1"> 단어 쌍을 저장하기 위해 `_suggestions` list를 RandomWordsState class를 추가하세요. The variable begins with
 an underscore (`_`)&mdash;prefixing an identifier with an underscore enforces
 privacy in the Dart language.
 
-Also, add a `biggerFont` variable for making the font size larger.
+또한 글꼴 크기를 더 크게 지정하려면 `biggerFont` 변수를 추가합니다.
 
 <!-- skip -->
 {% prettify dart %}
@@ -482,18 +403,12 @@ class RandomWordsState extends State<RandomWords> {
 {% endprettify %}
 </li>
 
-<li markdown="1"> Add a `_buildSuggestions()` function to the RandomWordsState
-class. This method builds the ListView that displays the suggested word
-pairing.
+<li markdown="1"> RandomWordsState 클래스에 `_buildSuggestions()` 함수를 추가하세요. 이 메서드는 제안된 단어 쌍을 표시하는 ListView를 build 합니다.
 
-The ListView class provides a builder property, `itemBuilder`,
-a factory builder and callback function specified as an anonymous function.
-Two parameters are passed to the function&mdash;the BuildContext,
-and the row iterator, `i`. The iterator begins at 0 and increments
-each time the function is called, once for every suggested word pairing.
-This model allows the suggested list to grow infinitely as the user scrolls.
+ListView 클래스는 익명 함수로 지정된 factory builder 및 콜백 함수 인 builder property인 `itemBuilder`를 제공합니다.
+함수에 두 개의 매개 변수&mdash; 즉 BuildContext와 행 반복자, `i` 가 전달됩니다. 이 이터레이터는 0으로 시작하여 함수가 호출 될 때마다, 제안 된 모든 단어 쌍에 대해 한 번씩 증가합니다. 이 모델은 사용자가 스크롤 할 때 제안된 list를 무한대로 확장 할 수 있게 허용합니다.
 
-Add the highlighted lines below:
+아래에 강조 표시된 행을 추가하세요:
 
 <!-- skip -->
 {% prettify dart %}
@@ -530,11 +445,9 @@ class RandomWordsState extends State<RandomWords> {
 {% endprettify %}
 </li>
 
-<li markdown="1"> The `_buildSuggestions` function calls `_buildRow` once per
-word pair. This function displays each new pair in a ListTile,
-which allows you to make the rows more attractive in the next step.
+<li markdown="1"> `_buildSuggestions` 함수는 단어 쌍당 한 번 `_buildRow` 를 호출합니다. 이 함수는 ListTile에 각 새로운 쌍을 표시하여 다음 단계에서 행을보다 매력적으로 만듭니다.
 
-Add a `_buildRow` function to RandomWordsState:
+RandomWordsState에 `_buildRow` 함수를 추가합니다:
 
 <!-- skip -->
 {% prettify dart %}
@@ -553,9 +466,7 @@ class RandomWordsState extends State<RandomWords> {
 {% endprettify %}
 </li>
 
-<li markdown="1"> Update the build method for RandomWordsState to use
-`_buildSuggestions()`, rather than directly calling the word
-generation library. Make the highlighted changes:
+<li markdown="1"> 단어 생성 라이브러리를 직접 호출하는 것보다는, `_buildSuggestions()`을 사용하도록 RandomWordsState의 build 메서드를 update 하십시오. 강조 표시된 변경사항을 작성하세요:
 
 <!-- skip -->
 {% prettify dart %}
@@ -577,13 +488,9 @@ class RandomWordsState extends State<RandomWords> {
 {% endprettify %}
 </li>
 
-<li markdown="1"> Update the build method for MyApp.
-    Remove the Scaffold and AppBar instances from MyApp.
-    These will be managed by RandomWordsState, which makes it easier to
-    change the name of the route in the app bar as the user
-    navigates from one screen to another in the next step.
+<li markdown="1"> MyApp의 build 메서드를 update 하세요. MyApp에서 Scaffold와 AppBar 인스턴스를 제거합니다. 이것들은 RandomWordsState에서 관리될 것입니다. RandomWordsState은 사용자가 다음 단계에, 한 화면에서 다른 화면으로 이동할 때 app bar에서 경로 이름을 변경하는 것을 더 쉽게 합니다.
 
-Replace the original method with the highlighted build method below:
+app이 제대로 실행되지 않는다면, 다음 링크의 코드를 사용해 보세요:
 
 <!-- skip -->
 {% prettify dart %}
@@ -601,31 +508,24 @@ class MyApp extends StatelessWidget {
 
 </ol>
 
-Restart the app. You should see a list of word pairings. Scroll down
-as far as you want and you will continue to see new word pairings.
+app을 재구동하세요. 단어 페어링의 list가 표시되어야합니다. 계속 아래로 스크롤 하면, 새로운 단어 쌍이 계속해서 표시됩니다.
 
 <center><img src="images/step4-screenshot.png" alt="screenshot at completion of fourth step"></center>
 
-<p class="h2-like">Problems?</p>
+<p class="h2-like">문제점?</p>
 
-If your app is not running correctly, you can use the code
-at the following link to get back on track.
+app이 제대로 실행되지 않는다면, 다음 링크의 코드를 사용해 보세요:
 
 * [**lib/main.dart**](https://gist.githubusercontent.com/Sfshaza/d6f9460a04d3a429eb6ac0b0f07da564/raw/34fe240f4122435c871bb737708ee0357741801c/main.dart)
 
 ---
 
-# Step 5: Add interactivity
+# Step 5: 상호작용 추가하기
 
-In this step, you'll add tappable heart icons to each row.
-When the user taps an entry in the list, toggling its
-"favorited" state, that word pairing is added or removed from a
-set of saved favorites.
+이 단계에서는 탭이 가능한 하트 아이콘을 각 행에 추가합니다. 사용자가 목록의 항목을 탭하여 "즐겨 찾기"상태로 전환하면 해당 단어 쌍이 저장된 즐겨 찾기 모음에 추가되거나 제거됩니다.
 
 <ol markdown="1">
-<li markdown="1"> Add a `_saved` Set to RandomWordsState. This Set stores
-    the word pairings that the user favorited. Set is preferred to List
-    because a properly implemented Set does not allow duplicate entries.
+<li markdown="1"> RandomWordsState에 `_saved` Set을 추가합니다. 이 Set은 사용자가 즐겨찾기된 단어 한 쌍을 저장합니다. 제대로 구현 된 Set은 중복 된 항목을 허용하지 않기 때문에 Set을 List보다 우선시 합니다.
 
 <!-- skip -->
 {% prettify dart %}
@@ -640,9 +540,7 @@ class RandomWordsState extends State<RandomWords> {
 {% endprettify %}
 </li>
 
-<li markdown="1"> In the `_buildRow` function, add an `alreadySaved`
-    check to ensure that a word pairing has not already been added to
-    favorites.
+<li markdown="1"> `_buildRow` 함수에서 `alreadySaved` check를 추가하여 단어 쌍이 이미 즐겨찾기에 추가되지 않았는지 확인하세요.
 
 <!-- skip -->
 {% prettify dart %}
@@ -653,11 +551,9 @@ class RandomWordsState extends State<RandomWords> {
 {% endprettify %}
 </li>
 
-<li markdown="1"> Also in `_buildRow()`, add heart-shaped icons to the
-    ListTiles to enable favoriting. Later, you'll add the ability to
-    interact with the heart icons.
+<li markdown="1"> 또한 `_buildRow()`에서 하트 모양의 아이콘을 ListTiles에 추가하여 즐겨 찾기를 가능하게 합니다.
 
-Add the highlighted lines below:
+아래에 강조 표시된 행을 추가하세요:
 
 <!-- skip -->
 {% prettify dart %}
@@ -677,17 +573,12 @@ Add the highlighted lines below:
 {% endprettify %}
 </li>
 
-<li markdown="1"> Restart the app. You should now see open hearts on
-    each row, but they are not yet interactive.
+<li markdown="1"> app을 재구동 하세요.각 행마다 하트를 볼 수 있지만, 아직 상호작용은 하지 않습니다.
 </li>
 
-<li markdown="1"> Make the name suggestion tiles tappable in the `_buildRow`
-    function. If a word entry has already been added to favorites,
-    tapping it again removes it from favorites.
-    When a tile has been tapped, the function calls
-    `setState()` to notify the framework that state has changed.
+<li markdown="1"> `_buildRow` 함수에서 이름 추천 타일을 탭이 가능하게 만드세요. 만약 단어 항목이 이미 즐겨찾기에 추가 된 경우라면, 다시 단어를 탭을 하면 즐겨 찾기에서 제거됩니다. 타일을 탭하게 되면, 함수는 `setState()` 를 호출하여 상태가 변경되었음을 프레임 워크에 알립니다.
 
-Add the highlighted lines:
+아래에 강조 표현된 행을 추가하세요:
 
 <!-- skip -->
 {% prettify dart %}
@@ -719,42 +610,29 @@ Add the highlighted lines:
 
 <aside class="alert alert-success" markdown="1">
 <i class="fa fa-lightbulb-o"> </i> **Tip:**
-In Flutter's react style framework, calling `setState()` triggers
-a call to the `build()` method for the State object, resulting in
-an update to the UI.
+Flutter의 반응형 프레임 워크는, `setState()` 를 호출하면 State 객체에 대한 build () 메서드가 호출되어 UI가 업데이트됩니다.
 </aside>
 
-Hot reload the app. You should be able to tap any tile to favorite, or unfavorite,
-the entry. Note that tapping a tile generates an implicit ink splash animation
-that emanates from wherever you tapped.
+app을 hot reload 합니다. 어떠한 타일도 즐겨찾기를 하거나 즐겨찾기를 해제할 수 있어야 합니다. 타일을 탭하는 것은 당신이 탭했던 곳에서 나오는 암묵적인 잉크 스플래시 애니메이션을 생성합니다.
 
 <center><img src="images/step5-screenshot.png" alt="screenshot at completion of 5th step"></center>
 
-<p class="h2-like">Problems?</p>
+<p class="h2-like">저점?</p>
 
-If your app is not running correctly, you can use the code
-at the following link to get back on track.
+app이 제대로 실행되지 않는다면, 다음 링크의 코드를 사용해 보세요:
 
 * [**lib/main.dart**](https://gist.githubusercontent.com/Sfshaza/936ce0059029a8c6e88aaa826a3789cd/raw/a3065d5c681a81eff32f75a9cd5f4d9a5b24f9ff/main.dart)
 
 ---
 
-# Step 6: Navigate to a new screen
+# Step 6: 새로운 화면으로 이동
 
-In this step, you'll add a new screen (called a _route_ in Flutter) that
-displays the favorites. You'll learn how to navigate between the home route
-and the new route.
+이 단계에서는 즐겨찾기를 표시하는 새 화면 (Flutter에 _route_라고 함)을 추가합니다. home 경로와 새 경로 사이를 탐색하는 방법을 배우게됩니다.
 
-In Flutter, the Navigator manages a stack containing the app's routes.
-Pushing a route onto the Navigator's stack, updates the display to that route.
-Popping a route from the Navigator's stack, returns the display to the previous
-route.
+Flutter에서 Navigator는 app의 경로가 포함 된 스택을 관리합니다. Navigator의 스택으로 경로를 push하면 디스플레이가 해당 경로로 업데이트됩니다. Navigator의 스택에서 경로를 제거하면 디스플레이가 이전 경로로 돌아갑니다.
 
 <ol markdown="1">
-<li markdown="1"> Add a list icon to the AppBar in the build method
-    for RandomWordsState.  When the user clicks the list icon, a new
-    route that contains the favorites items is pushed to the Navigator,
-    displaying the icon.
+<li markdown="1"> RandomWordsState의 build 메서드에서 AppBar에 list 아이콘을 추가 합니다. 사용자가 list 아이콘을 클릭하면 즐겨찾기 항목이 포함 된 새 경로가 네비게이터로 푸시되고 아이콘이 표시됩니다.
 
 <aside class="alert alert-success" markdown="1">
 <i class="fa fa-lightbulb-o"> </i> **Tip:**
@@ -763,7 +641,7 @@ such as `action`, take an array of widgets (`children`),
 as indicated by the square brackets (`[]`).
 </aside>
 
-Add the icon and its corresponding action to the build method:
+아래에 build 메서드와 해당 action을 추가하세요:
 
 <!-- skip -->
 {% prettify dart %}
@@ -786,7 +664,7 @@ class RandomWordsState extends State<RandomWords> {
 {% endprettify %}
 </li>
 
-<li markdown="1"> Add a `_pushSaved()` function to the RandomWordsState class.
+<li markdown="1"> `_pushSaved()` 함수를 RandomWordsState 클래스에 추가하세요.
 
 <!-- skip -->
 {% prettify dart %}
@@ -797,19 +675,14 @@ class RandomWordsState extends State<RandomWords> {
 }
 {% endprettify %}
 
-Hot reload the app. The list icon appears in the app bar.
-Tapping it does nothing yet, because the `_pushSaved` function is empty.
+app을 hot reload 하세요. list 아이콘에 app bar가 나타납니다. `_pushSaved` 함수가 비어 있기 때문에 탭을 하여도 아무 일도 생기지 않습니다.
 </li>
 
-<li markdown="1"> When the user taps the list icon in the app bar,
-    build a route and push it to the Navigator's stack.
-    This action changes the screen to display the new route.
+<li markdown="1"> 사용자가 app bar의 list 아이콘을 탭하면 경로를 푸시하고 네비게이터의 스택으로 푸시합니다. 이 작업은 새 경로를 표시하도록 화면을 변경합니다.
 
-The content for the new page is built in MaterialPageRoute's `builder`
-property, in an anonymous function.
+새 페이지의 내용은 MaterialPageRoute의 `builder` 속성에 익명 함수로 작성됩니다.
 
-Add the call to Navigator.push, as shown by the highlighted code,
-which pushes the route to the Navigator's stack.
+Navigator.push에 호출을 추가하면, 강조 표시된 코드는 Navigator의 스택에 경로를 푸시합니다.
 
 <!-- skip -->
 {% prettify dart %}
@@ -820,11 +693,7 @@ which pushes the route to the Navigator's stack.
 {% endprettify %}
 </li>
 
-<li markdown="1"> Add the MaterialPageRoute and its builder. For now,
-    add the code that generates the ListTile rows. The `divideTiles()`
-    method of ListTile adds horizontal spacing between each ListTile.
-    The `divided` variable holds the final rows, converted to a list
-    by the convenience function, `toList()`.
+<li markdown="1"> MaterialPageRoute 및 그 builder를 추가하세요. 지금은 ListTile 행을 생성하는 코드를 추가하세요. ListTile의 `divideTiles()` 메서드는 각 ListTile 사이에 가로 간격을 추가합니다. `분할된(divided)` 변수는 편의 함수에 의해리스트로 변환 된 마지막 행을 `toList()`로 유지합니다.
 
 <!-- skip -->
 {% prettify dart %}
@@ -855,13 +724,9 @@ which pushes the route to the Navigator's stack.
 {% endprettify %}
 </li>
 
-<li markdown="1"> The builder property returns a Scaffold,
-    containing the app bar for the new route, named
-    "Saved Suggestions." The body of the new route
-    consists of a ListView containing the ListTiles rows;
-    each row is separated by a divider.
+<li markdown="1"> builder 속성은 "Saved Suggestions"라는 새 경로의 app bar가 포함 된 Scaffold를 반환합니다. 새 라우트의 본문은 ListTiles 행을 포함하는 ListView로 구성됩니다. 각 행은 구분선으로 구분됩니다.
 
-Add the highlighted code below:
+아래에 강조 표시된 코드를 추가하세요:
 
 <!-- skip -->
 {% prettify dart %}
@@ -899,37 +764,27 @@ Add the highlighted code below:
 {% endprettify %}
 </li>
 
-<li markdown="1"> Hot reload the app. Favorite some of the selections and
-    tap the list icon in the app bar. The new route appears containing
-    the favorites. Note that the Navigator adds a "Back" button to the
-    app bar. You did not have to explicitly implement `Navigator.pop`.
-    Tap the back button to return to the home route.
+<li markdown="1"> app을 hot reload 하세요. 선택 항목 중 일부를 즐겨 찾기에 추가하고 app bar의 list 아이콘을 탭합니다. 즐겨찾기가 포함 된 새로운 경로가 나타납니다. 네비게이터는 app bar에 "뒤로가기" 버튼을 추가합니다. `Navigator.pop` 을 명시적으로 구현할 필요가 없습니다. 뒤로가기 버튼을 탭하여, 홈으로 이동합니다.
 </li>
 </ol>
 
 <center><img src="images/step6a-screenshot.png" alt="screenshot at completion of 6th step"><img src="images/step6b-screenshot.png" alt="second route"></center>
 
-<p class="h2-like">Problems?</p>
+<p class="h2-like">문제점?</p>
 
-If your app is not running correctly, you can use the code
-at the following link to get back on track.
+app이 제대로 실행되지 않는다면, 다음 링크의 코드를 사용해 보세요:
 
 * [**lib/main.dart**](https://gist.github.com/Sfshaza/bc5547e112e4dc3a1aa87afdf917caeb)
 
 ---
-# Step 7: Change the UI using Themes
+# Step 7: UI 테마 변경하기
 
-In this final step, you'll play with the app's theme. The
-_theme_ controls the look and feel of your app. You can use
-the default theme, which is dependent on the physical device
-or emulator, or you can customize the theme to reflect your branding.
+마지막 단계로, app의 테마와 함께 할 것입니다. _theme_ 는 app의 look and feel을 제어합니다. 물리적 장치 또는 에뮬레이터에 종속적인 기본 테마를 사용하거나 당신의 브랜딩을 반영하도록 테마를 사용자 정의 할 수 있습니다.
 
 <ol markdown="1">
-<li markdown="1"> You can easily change an app's theme by configuring
-    the ThemeData class.  Your app currently uses the default theme,
-    but you'll be changing the primary color to be white.
+<li markdown="1"> ThemeData 클래스를 설정하여 app의 테마를 쉽게 변경할 수 있습니다.app에서 현재 기본 테마를 사용하지만 기본 색상을 흰색으로 변경합니다.
 
-Change the app's theme to white by adding the highlighted code to MyApp:
+MyApp에 강조 표시된 코드를 추가하여 앱의 테마를 흰색으로 변경합니다:
 
 <!-- skip -->
 {% prettify dart %}
@@ -948,46 +803,35 @@ class MyApp extends StatelessWidget {
 {% endprettify %}
 </li>
 
-<li markdown="1"> Hot reload the app. Notice that the entire background is white,
-even the app bar.
+<li markdown="1"> 앱을 hot reload 합니다. 전체 배경은 app bar 또한 흰색입니다.
 </li>
 
-<li markdown="1"> As an exercise for the reader, use
-[ThemeData](https://docs.flutter.io/flutter/material/ThemeData-class.html)
-to change other aspects of the  UI. The
-[Colors](https://docs.flutter.io/flutter/material/Colors-class.html)
-class in the Material library provides many color constants you can play with,
-and hot reload makes experimenting with the UI quick and easy.
+<li markdown="1"> 독자를위한 연습으로 [ThemeData](https://docs.flutter.io/flutter/material/ThemeData-class.html)를 사용하여 UI의 다른 측면을 변경해 보세요. Material 라이브러리의 [Colors](https://docs.flutter.io/flutter/material/Colors-class.html) 클래스는 많은 색상 상수를 제공하며 hot reload는 UI를 빠르고 쉽게 테스트 해줍니다.
 </li>
 </ol>
 
 <center><img src="images/step7-themes.png" alt="screenshot at completion of 7th step"></center>
 
-<p class="h2-like">Problems?</p>
-
-If you've gotten off track, use the code from the following link
-to see the code for the final app.
+<p class="h2-like">문제점?</p>
+app이 제대로 실행되지 않는다면, 다음 링크의 코드를 사용해 최종 앱의 코드를 확인해 보세요:
 
 * [**lib/main.dart**](https://gist.githubusercontent.com/Sfshaza/c07c91a4061fce4b5eacaaf4d82e4993/raw/4001a72c0133b97c8e16bdeb3195ca03525696bd/main.dart)
 
 ---
 
-# Well done!
+# 잘 하셨습니다!
 
-You've written an interactive Flutter app that runs on both iOS and Android.
-In this codelab, you've:
+iOS와 Android 모두에서 실행되는 대화식 Flutter 앱을 작성했습니다. 이 codelab에서는 다음을 수행했습니다:
 
-* Created a Flutter app from the ground up.
-* Written Dart code.
-* Leveraged an external, third party library.
-* Used hot reload for a faster development cycle.
-* Implemented a stateful widget, adding interactivity to your app.
-* Created a lazily loaded, infinite scrolling list displayed with a
-  ListView and ListTiles.
-* Created a route and added logic for moving between the home route
-  and the new route.
-* Learned about changing the look of your app's UI using Themes.
+* Flutter app을 만들었습니다.
+* Dart 코드로 작성했습니다.
+* third party library를 사용했습니다.
+* 더 빠른 개발 cycle을 위해 hot reload를 사용했습니다.
+* 상태 기반 위젯을 구현하여 app에 상호작용 기능을 추가했습니다.
+* ListView 와 ListTiles와 함께 표시되는 지연로드 된(lazily loaded) 무한 스크롤 목록을 작성했습니다.
+* 홈 경로와 새 경로 사이를 이동하기위한 경로를 만들고 로직을 추가했습니다.
+* 테마를 사용하여 앱의 UI 모양 변경에 대해 배웠습니다.
 
-<p class="h2-like">Next step</p>
+<p class="h2-like">다음 단계</p>
 
-[Next step: Learn More](/get-started/learn-more/)
+[다음 단계: 더 배우기](/get-started/learn-more/)

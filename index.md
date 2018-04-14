@@ -7,9 +7,9 @@ hide_title: true
 
 <div class="homepage__illustration">
     <h1 class="homepage__illustration--text">
-        <span>Flutter Beta 2 now available!</span>
+        <span>Flutter Beta 2가 이제 사용 가능합니다!</span>
         &nbsp;
-        <a href="https://medium.com/flutter-io/https-medium-com-flutter-io-announcing-flutters-beta-2-c85ba1557d5e">Learn More</a>.
+        <a href="https://medium.com/flutter-io/https-medium-com-flutter-io-announcing-flutters-beta-2-c85ba1557d5e">더 알아보기</a>.
     </h1>
     <img src="images/homepage/header-illustration.png" 
          class="homepage__illustration--image"
@@ -18,47 +18,43 @@ hide_title: true
 
 <section class="homepage__key_points card">
     <h1 class="homepage__title">
-        Build beautiful native apps in&nbsp;record&nbsp;time
+        빠른시간에 아름다운 native app을 만드세요
     </h1>
 
     <div class="homepage__tagline">
-    Flutter is Google’s mobile UI framework
-    for crafting high-quality native interfaces
-    on iOS and Android in record time. Flutter works with existing code,
-    is used by developers and organizations around the world,
-    and is free and open source.
+    Flutter는 iOS 및 Android에서 고품질 네이티브 인터페이스를 만들기 위한 Google의 모바일 UI 프레임 워크입니다.
+    Flutter는 기존 코드와 함께 작동하며 전 세계 개발자와 조직에서 사용하며 무료이고, 오픈 소스입니다.
     </div>
 
     <div class="homepage__button_row">
-    <a href="/get-started/install/" class="get-started-button">Get Started</a>
+    <a href="/get-started/install/" class="get-started-button">시작하기</a>
     </div>
 
     <div class="key-points">
 
         <div class="homepage__key_point">
-            <div class="homepage__key_point_title">Fast Development</div>
+            <div class="homepage__key_point_title">빠른 개발</div>
 
             <p>
-            Hot Reload in milliseconds to paint your app to life. 
-            Use a rich set of fully-customizable widgets to build native interfaces in minutes. 
+            밀리세컨 단위로 app이 Hot Reload 됩니다.
+            풍부한 사용자 정의 위젯을 사용하여 단 몇 분만에 기본 인터페이스를 구축하십시오.
             </p>
         </div>
 
         <div class="homepage__key_point">
-            <div class="homepage__key_point_title">Expressive and Flexible UI</div>
+            <div class="homepage__key_point_title">표현적이고 유연한 UI</div>
 
             <p>
-            Quickly ship features with a focus on native end-user experiences. 
-            Layered architecture allows full customization, 
-            which results in incredibly fast rendering and expressive and flexible designs.
+            native end-user의 경험에 초점을 맞춰 신속하게 기능을 제공합니다.
+            계층화 된 아키텍처로 완벽한 사용자 정의가 가능하므로 매우 빠른 렌더링과 표현력이 풍부하고 유연한 설계가 가능합니다.
             </p>
         </div>
 
         <div class="homepage__key_point">
-            <div class="homepage__key_point_title">Native Performance</div>
+            <div class="homepage__key_point_title">Native 성능</div>
 
             <p>
-            Flutter’s widgets incorporate all critical platform differences such as scrolling, navigation, icons and fonts to provide full native performance on both iOS and Android.
+            Flutter의 위젯은 스크롤링, 탐색, 아이콘 및 글꼴과 같은 중요한 플랫폼의 차이점을 모두 포함하여 iOS 및 Android에서 완전한 성능을 제공합니다.
             </p>
         </div>
 
@@ -66,15 +62,11 @@ hide_title: true
 </section>
 
 <section class="homepage__hot_reload card">
-    <h1>Fast development</h1>
+    <h1>빠른 개발</h1>
 
     <p>
-        Flutter's <em>hot reload</em> helps you quickly
-        and easily experiment, build UIs, add features, and fix
-        bugs faster. Experience sub-second reload times,
-        without losing state, on
-        emulators, simulators, and hardware for iOS
-        and Android.
+        Flutter의 <em>hot reload</em>는 빠르고 쉽게 실험하고, UI를 작성하고, 기능을 추가하고, 버그를 빠르게 수정하는 데 도움이됩니다.
+        iOS 및 Android 용 에뮬레이터, 시뮬레이터 및 하드웨어에서 상태를 잃지 않고 2 초 미만의 reload 시간을 경험하십시오.
     </p>
 
     <div class="hot-reload-gif-container">
@@ -83,13 +75,10 @@ hide_title: true
 </section>
 
 <section class="homepage__beautiful_uis card ">
-    <h1>Expressive, beautiful UIs</h1>
+    <h1>표현적이고, 아름다운 UI</h1>
 
     <p>
-    Delight your users with Flutter's built-in
-    beautiful Material Design and
-    Cupertino (iOS-flavor) widgets, rich motion APIs,
-    smooth natural scrolling, and platform awareness.
+    Flutter에 내장 된 아름다운 Material Design 및 Cupertino (iOS 향) 위젯, 풍부한 모션 API,  자연스러운 스크롤링 및 플랫폼 인식으로 사용자를 즐겁게 합니다.
     </p>
 
     <div class="screenshot-list">
@@ -100,20 +89,16 @@ hide_title: true
     </div>
 
     <p>
-    Browse the <a href="/widgets/">widget catalog</a>.
+    <a href="/widgets/">widget catalog</a>를 확인하세요.
     </p>
 </section>
 
 <section class="homepage__reactive_framework card">
-    <h1>Modern, reactive framework</h1>
+    <h1>현대적이고, 반응적인 프레임워크</h1>
 
     <p>
-    Easily compose your UI with Flutter's
-    modern reactive framework and
-    rich set of platform, layout, and foundation widgets.
-    Solve your tough UI challenges with
-    powerful and flexible APIs for 2D, animation, gestures,
-    effects, and more.
+    Flutter의 현대적인 반응형 프레임워크(reactive framework)와 다양한 플랫폼, 레이아웃 및 기초 위젯으로 UI를 손쉽게 작성할 수 있습니다.
+    2D, 애니메이션, 제스처, 효과 등을위한 강력하고 유연한 API를 사용하여 어려운 UI 문제를 해결하세요.
     </p>
 
 {% prettify dart %}
@@ -148,26 +133,21 @@ class CounterState extends State<Counter> {
 {% endprettify %}
 
     <p>
-    Browse the <a href="/widgets/">widget catalog</a>
-    and learn more about the
-    <a href="/widgets-intro/">reactive framework</a>.
+    <a href="/widgets/">widget catalog</a>를 살펴보고 <a href="/widgets-intro/">reactive framework</a>에 대해 자세히 알아보세요.
     </p>
 
 </section>
 
 <section class="homepage__interop card">
-    <h1>Access native features and SDKs</h1>
+    <h1>native 기능과 SDK에 접근</h1>
 
     <p>
-    Make your app come to life
-    with platform APIs, 3rd party SDKs,
-    and native code.
-    Flutter lets you reuse your existing Java, Swift, and ObjC code,
-    and access native features and SDKs on iOS and Android.
+    플랫폼 API, 3rd party SDK 및 native code를 사용하여 앱을 완성하십시오. 
+    Flutter를 사용하면 기존 Java, Swift 및 ObjC 코드를 재사용하고 iOS 및 Android에서 native 기능 및 SDK에 액세스 할 수 있습니다.
     </p>
 
     <p>
-    Accessing platform features is easy. Here is a snippet from our <a href="https://github.com/flutter/flutter/tree/master/examples/platform_channel">interop example</a>:
+    플랫폼 기능에 쉽게 액세스 할 수 있습니다. 여기 <a href="https://github.com/flutter/flutter/tree/master/examples/platform_channel">interop example</a>에 대한 snippet이 있습니다:
     </p>
 
 {% prettify dart %}
@@ -186,24 +166,18 @@ Future<Null> getBatteryLevel() async {
 {% endprettify %}
 
     <p>
-    Learn how to use <a href="/using-packages/">packages</a>, or 
-    write <a href="/platform-channels/">platform channels</a>,
-    to access native code, APIs, and SDKs.
+    <a href="/using-packages/">packages</a> 사용 방법이나 <a href="/platform-channels/">platform channels</a> 방법을 배우고 native code, API 및 SDK에 액세스하세요.
     </p>
 
 </section>
 
 <section class="homepage__features card">
-    <h1>Unified app development</h1>
+    <h1>통합 app 개발</h1>
 
     <p>
-    Flutter has the tools and libraries to help you easily
-    bring your ideas to life on iOS and Android.
-    If you don't have any mobile development experience, Flutter
-    is an easy and fast way to build beautiful mobile apps.
-    If you are an experienced iOS or Android developer,
-    you can use Flutter for your views and leverage much of your
-    existing Java/ObjC/Swift investment.
+    Flutter에는 iOS 및 Android에서 아이디어를 쉽게 사용할 수 있도록 도와주는 도구와 라이브러리가 있습니다.
+    모바일 개발 경험이 없다면 Flutter는 아름다운 모바일 앱을 쉽고 빠르게 만들 수 있습니다.
+    숙련 된 iOS 개발자 또는 Android 개발자 인 경우 Flutter를 사용하여 기존 Java / ObjC / Swift의 상당 부분을 활용할 수 있습니다.
     </p>
 
     <div class="feature-lists">
@@ -295,10 +269,11 @@ Future<Null> getBatteryLevel() async {
 
 <section class="homepage__try_flutter card">
 
-    <div class="homepage__try_today">Try Flutter today. Getting started is easy.</div>
+    <div class="homepage__try_today">
+    오늘, Flutter를 사용해보세요. 시작은 쉽습니다.</div>
 
     <div class="homepage__button_row">
-    <a href="/get-started/install/" class="get-started-button">Get Started</a>
+    <a href="/get-started/install/" class="get-started-button">시작하기</a>
     </div>
 
 </section>
