@@ -1,29 +1,28 @@
 ---
 layout: page
-title: "Get Started: Learn More"
+title: "시작하기: 더 배우기"
 permalink: /get-started/learn-more/
 ---
-* Learn more about the Flutter framework
+* Flutter 프레임워크에 대해 자세히 알아보십시오.
 
 {% comment %}
 Once the "Flutter for React" doc (etc) are done, add here.
 {% endcomment %}
 
-  * [Building Layouts in Flutter](/tutorials/layout/) tutorial
-  * [Add Interactivity](/tutorials/interactive/) tutorial
-  * [A Tour of the Flutter Widget Framework](/widgets-intro/)
-  * [Flutter for Android Developers](/flutter-for-android/)
+  * [Flutter에 레이아웃 생성하기](/tutorials/layout/) 예제
+  * [상호작용 추가하기](/tutorials/interactive/) 예제
+  * [Flutter 위젯 프레임워크 둘러보기](/widgets-intro/)
+  * [Android개발자들을 위한 Flutter](/flutter-for-android/)
   
   
-* Other resources
+* 다른 자료들
 
   * [Flutter Cookbook](/cookbook/)
-  * [From Java to Dart](https://codelabs.developers.google.com/codelabs/from-java-to-dart/#0) codelab
-  * [Bootstrap into Dart: learn more about the language](/bootstrap-into-dart/)
+  * [Java에서 Dart로](https://codelabs.developers.google.com/codelabs/from-java-to-dart/#0) codelab
+  * [Dart에 Bootstrap: 언어에 대해 자세히 알아보기](/bootstrap-into-dart/)
 
-Please reach out to us at our [mailing list][mailinglist]. We'd love
-to hear from you!
+[mailing list][mailinglist]에 문의하십시오. 우리는 당신의 의견을 듣고 싶습니다! 
 
-Happy Fluttering!
+행복한 Flutter 개발이 되세요!
 
 [mailinglist]: mailto:flutter-dev@googlegroups.com

@@ -1,14 +1,12 @@
 ---
 layout: page
-title: "Get Started: Test Drive"
+title: "시작하기: Test Drive"
 permalink: /get-started/test-drive/
 ---
 
-This page describes how to "test drive" Flutter: create a new Flutter app from
-our templates, run it, and learn how to make changes with Hot Reload.
+이 페이지에서는 Flutter의 "test drive"방법에 대해 설명합니다: 템플릿에서 새로운 Flutter 앱을 만들고, 실행하고, Hot Reload로 변경하는 방법을 배웁니다.
 
-Flutter is a flexible toolkit, so please start by selecting your development
-tool of choice for writing, building, and running your Flutter app.
+Flutter는 유연한 툴킷이므로 Flutter 앱을 작성, 제작 및 실행하기위한 개발 도구를 선택하여 시작하십시오.
 
 <div id="tab-set-install">
 
@@ -20,94 +18,81 @@ tool of choice for writing, building, and running your Flutter app.
 
 <div id="tab-install-androidstudio" class="tabs__content current" markdown="1">
 
-*Android Studio:* A complete, integrated IDE experience for Flutter. 
+*Android Studio:* Flutter를위한 완벽한 통합 IDE 경험을 제공합니다.
 
-## Create new app {#create-app}
+## 새로운 app 만들기 {#create-app}
 
-   1. Select **File>New Flutter Project**
-   1. Select **Flutter application** as the project type, and press Next
-   1. Enter a project name (e.g. `myapp`), and press Next
-   1. Click **Finish**
-   1. Wait for Android Studio to install the SDK, and create the project.
+   1. **File>New Flutter Project**를 선택합니다.
+   1. project type에서 **Flutter application**를 선택하고 Next를 누릅니다.
+   1. project name을 입력하고 (e.g. `myapp`) Next를 누릅니다.
+   1. **Finish**를 클릭합니다.
+   1. Android Studio가 SDK를 설치하고 프로젝트를 만들 때까지 기다립니다.
 
-The above command creates a Flutter project directory called `myapp` that contains a simple demo
-app that uses [Material Components](https://material.io/guidelines/).
+위의 명령은 [Material Components](https://material.io/guidelines/)를 사용하는 간단한 데모를 포함하는 `myapp`이라는 Flutter 프로젝트 디렉토리를 만듭니다.
 
-In the project directory, the code for your app is in `lib/main.dart`.
+프로젝트 디렉토리에서 앱의 코드는 `lib/main.dart`에 있습니다.
 
-## Run the app
+## app 실행하기
 
-   1. Locate the main Android Studio toolbar:<br>
+   1. main Android Studio toolbar에 위치하고 있습니다:<br>
       ![Main IntelliJ toolbar](/images/intellij/main-toolbar.png)
-   1. In the **target selector**, select an Android device for running the app.
-      If none are listed as available, select **Tools>Android>AVD Manager** and
-      create one there. For details, see [Managing
-      AVDs](https://developer.android.com/studio/run/managing-avds.html).
-   1. Click the **Run icon** in the toolbar, or invoke the menu item **Run >
-      Run**.
-   1. If everything works, you should see your starter app on your device or
-      simulator:<br>
+   1. **target selector**에서 app을 구동하기 위한 Android device를 선택해주세요.
+   사용가능 목록이 표시되지 않을 경우엔, **Tools>Android>AVD Manager**를 선택하고 그곳에서 생성하세요. 자세한 내용은 [Managing
+      AVDs](https://developer.android.com/studio/run/managing-avds.html)를 확인하세요.
+   1. 도구 막대에서 **Run icon**을 클릭하거나 **Run >
+      Run**를 호출하세요.
+   1. 정상적으로 작동이 되었을 때, app을 생성한 후에는 기기 또는 시뮬레이터에 시작 app이 표시 되어야 합니다:<br>
       ![Starter App on Android](/images/flutter-starter-app-android.png)
 
-## Try a hot reload
+## Hot reload 시도하기
 
-Flutter offers a fast development cycle with _hot reload_, the ability to reload
-the code of a live running app without restarting or losing app state. Simply
-make a change to your source code, tell your IDE or command-line tool that you
-want to hot reload, and see the change in your simulator, emulator, or device.
+Flutter는 _hot reload_ 가 빠른 개발주기를 제공하며 앱을 재구동하거나 잃지 상태를 잃지 않고도 실행중인 앱의 코드를 다시로드 할 수 있습니다. 단순히 소스 코드를 변경하고, 새로 고침을 원하는 IDE 또는 command-line tool에 알려주고 시뮬레이터, 에뮬레이터 또는 장치의 변경 사항을 확인하십시오.
 
-  1. Change the string<br>`'You have pushed the button this many times:'`
-     to<br>`'You have clicked the button this many times:'`
-  1. Do not press the 'Stop' button; let your app continue to run.
-  1. To see your changes invoke **Save All** (`cmd-s` / `ctrl-s`), or click the
-     **Hot Reload button** (the button with the lightning bolt icon).
+  1. `'You have pushed the button this many times:'`를<br>
+  `'You have clicked the button this many times:'`로 바꿔보세요.
+  1. 'Stop' 버튼을 누르지 마시고 app을 계속 구동하세요.
+  1. 변경 내용을 보려면 **Save All** (`cmd-s` / `ctrl-s`)버튼이나 **Hot Reload button** (번개 아이콘의 버튼) 버튼을 클릭하세요.
 
-You should see the updated string in the running app almost immediately.
+실행중인 app에서 업데이트 된 문자열이 거의 즉시 보일 것입니다.
 
 </div>
 
 <div id="tab-install-vscode" class="tabs__content" markdown="1">
 
-*VS Code:* A light-weight editor with Flutter run and debug support.
+*VS Code:* Flutter 실행 및 디버그를 지원하는 경량 편집기 입니다.
 
-## Create new app
+## 새로운 app 만들기
 
-  1. Start VS Code
-  1. Invoke **View>Command Palette...**
-  1. Type 'flutter', and select the **'Flutter: New Project'** action
-  1. Enter a project name (e.g. `myapp`), and press Enter
-  1. Specify a location to place the project, and press the blue OK button
-  1. Wait for the project creation to continue, and the `main.dart` file to appear 
+  1. VS Code를 실행합니다.
+  1. **View>Command Palette...**를 실행합니다.
+  1. 'flutter'라고 입력 하고 **'Flutter: New Project'** 액션을 선택합니다.
+  1. project name을 입력하고 (e.g. `myapp`) Enter를 누릅니다.
+  1. project 경로를 지정하고 파란색 OK button을 클릭합니다.
+  1. project가 생성되고 `main.dart` 파일이 나올 때까지 기다립니다.
 
-The above command creates a Flutter project directory called `myapp` that contains a simple demo
-app that uses [Material Components](https://material.io/guidelines/).
+위의 명령은 [Material Components](https://material.io/guidelines/)를 사용하는 간단한 데모를 포함하는 `myapp`이라는 Flutter 프로젝트 디렉토리를 만듭니다.
 
-In the project directory, the code for your app is in `lib/main.dart`.
+프로젝트 디렉토리에서 앱의 코드는 `lib/main.dart`에 있습니다.
 
-## Run the app
+## app 실행하기
 
-  1. Make sure a target device is selected in the lower, right-hand corner of VS Code
-  1. Press the F5 button on the keyboard, or invoke **Debug>Start Debugging**
-  1. Wait for the app to launch
-  1. If everything works, after the app has been built, you should see your
-      starter app on your device or simulator:<br>
+  1. VS Code의 오른쪽 하단에 대상 장치가 선택되어 있는지 확인해 주세요.
+  1. 키보드의 F5 버튼을 클릭하거나 **Debug>Start Debugging**를 호출하세요.
+  1. app이 시작될 때까지 기다려 주세요.
+  1. 정상적으로 작동이 되었을 때, app을 생성한 후에는 기기 또는 시뮬레이터에 시작 app이 표시 되어야 합니다:<br>
       ![Starter App on Android](/images/flutter-starter-app-android.png)
 
-## Try a hot reload
+## Hot reload 시도하기
 
-Flutter offers a fast development cycle with _hot reload_, the ability to reload
-the code of a live running app without restarting or losing app state. Simply
-make a change to your source code, tell your IDE or command-line tool that you
-want to hot reload, and see the change in your simulator, emulator, or device.
+Flutter는 _hot reload_ 가 빠른 개발주기를 제공하며 앱을 재구동하거나 잃지 상태를 잃지 않고도 실행중인 앱의 코드를 다시로드 할 수 있습니다. 단순히 소스 코드를 변경하고, 새로 고침을 원하는 IDE 또는 command-line tool에 알려주고 시뮬레이터, 에뮬레이터 또는 장치의 변경 사항을 확인하십시오.
 
-  1. Open the file `lib/main.dart` in your favorite Dart code editor
-  1. Change the string<br>`'You have pushed the button this many times:'`
-     to<br>`'You have clicked the button this many times:'`
-  1. Do not press the 'Stop' button; let your app continue to run.
-  1. To see your changes invoke **Save** (`cmd-s` / `ctrl-s`), or click the
-     **Hot Reload button** (the green circular arrow button).
+  1. 좋아하는 Dart code editor에서 `lib/main.dart` 파일을 열어보세요.
+  1. `'You have pushed the button this many times:'`를 <br>
+  `'You have clicked the button this many times:'` 로 바꿔보세요.
+  1. 'Stop' 버튼을 누르지 마시고 app을 계속 구동하세요.
+  1. 변경 내용을 보려면 **Save** (`cmd-s` / `ctrl-s`)버튼이나 **Hot Reload button** (녹색 원형 화살표 버튼) 버튼을 클릭하세요.
 
-You should see the updated string in the running app almost immediately.
+실행중인 app에서 업데이트 된 문자열이 거의 즉시 보일 것입니다.
 
 </div>
 
@@ -116,55 +101,51 @@ You should see the updated string in the running app almost immediately.
 *Terminal + editor:* Your editor-of-choice combined with Flutter's terminal tool
 for running and building.
 
-## Create new app
+## 새로운 app 만들기
 
-   1. Use the `flutter create` command to create a new project:
+   1. `flutter create` 명령어를 사용하여 새 프로젝트를 만드세요:
    {% commandline %}
    flutter create myapp
    cd myapp
    {% endcommandline %}
 
-The above command creates a Flutter project directory called `myapp` that contains a simple demo
-app that uses [Material Components](https://material.io/guidelines/).
+위의 명령은 [Material Components](https://material.io/guidelines/)를 사용하는 간단한 데모를 포함하는 myapp이라는 Flutter 프로젝트 디렉토리를 만듭니다.
 
-In the project directory, the code for your app is in `lib/main.dart`.
+프로젝트 디렉토리에서 앱의 코드는 `lib/main.dart`에 있습니다.
 
-## Run the app
+## app 실행하기
 
-   * Check that an Android device is running. If none are shown, see [setup](/get-started/install/).
+   * Android 기기가 실행 중인지 확인합니다. 아무것도 보이지 않는다면, [setup](/get-started/install/) 을 확인하세요.
    {% commandline %}
    flutter devices
    {% endcommandline %}
-   * Run the app with the `flutter run` command:
+   * `flutter run` 명령으로 앱을 실행합니다.
    {% commandline %}
    flutter run
    {% endcommandline %}
-   * If everything works, after the app has been built, you should see your
-      starter app on your device or simulator:<br>
+   * 정상적으로 작동이 되었을 때, app을 생성한 후에는 기기 또는 시뮬레이터에 시작 app이 표시 되어야 합니다:<br> 
       ![Starter App on Android](/images/flutter-starter-app-android.png)
 
-## Try a hot reload
+## Hot reload 시도하기
 
-Flutter offers a fast development cycle with _hot reload_, the ability to reload
-the code of a live running app without restarting or losing app state. Simply
-make a change to your source code, tell your IDE or command-line tool that you
-want to hot reload, and see the change in your simulator, emulator, or device.
+Flutter는 _hot reload_ 가 빠른 개발주기를 제공하며 앱을 재구동하거나 잃지 상태를 잃지 않고도 실행중인 앱의 코드를 다시로드 할 수 있습니다. 단순히 소스 코드를 변경하고, 새로 고침을 원하는 IDE 또는 command-line tool에 알려주고 시뮬레이터, 에뮬레이터 또는 장치의 변경 사항을 확인하십시오.
 
-  1. Open the file `lib/main.dart`
-  1. Change the string<br>`'You have pushed the button this many times:'`
-     to<br>`'You have clicked the button this many times:'`
-  1. Do not press the 'Stop' button; let your app continue to run.
-  1. To see your changes invoke **Save All** (`cmd-s` / `ctrl-s`), or click the
-     **Hot Reload button** (the button with the lightning bolt icon).
+  1. `lib/main.dart` 파일을 열어보세요.
+  1. `'You have pushed the button this many times:'`
+     를<br>`'You have clicked the button this many times:'`로 바꿔보세요.
+  1. 'Stop'버튼을 누르지 마시고 app을 계속 구동하세요.
+  1. 변경 내용을 보려면 **Save All** (`cmd-s` / `ctrl-s`) 버튼이나
+     **Hot Reload button** (번개 아이콘이있는 버튼) 버튼을 클릭하세요.
 
-You should see the updated string in the running app almost immediately.
+실행중인 app에서 업데이트 된 문자열이 거의 즉시 보일 것입니다.
 
 </div>
 
 </div>
 
-## Next step
+## 다음 단계
 
+작은 app을 만들어 Flutter의 핵심 개념을 배우세요.
 Let's learn some core Flutter concepts, by creating a small app.
 
-[Next step: Write your first app](/get-started/codelab/)
+[다음 단계: 최초의 Flutter App 작성하기](/get-started/codelab/)

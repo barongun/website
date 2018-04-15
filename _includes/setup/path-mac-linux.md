@@ -1,30 +1,23 @@
-### Update your path
+### 경로를 변경하기
 
-You can update your PATH variable for the current session only at the command line,
-as shown in [Get the Flutter SDK](./#get-sdk). You'll probably want to
-update this variable permanently, so you can run `flutter` commands in any terminal session.
+[Get the Flutter SDK](./#get-sdk)와 같이 명령 줄에서만 현재 세션의 PATH 변수를 업데이트 할 수 있습니다. 이 변수를 영구적으로 업데이트하여 모든 터미널 세션에서 `flutter` 명령을 실행할 수 있습니다.
 
-The steps for modifying this variable permanently for all terminal sessions are machine-specific.
-Typically you add a line to a file that is executed whenever you open 
-a new window. For example:
+모든 터미널 세션에 대해 이 변수를 영구적으로 수정하는 단계는 시스템마다 다릅니다. 일반적으로 새 창을 열 때마다 실행되는 파일에 행을 추가합니다. 예를 들면:
 
-1. Determine the directory where you placed the Flutter SDK. You will
-   need this in Step 3.
-2. Open (or create) `$HOME/.bash_profile`. The file path and filename might be
-   different on your machine.
-3. Add the following line and change `[PATH_TO_FLUTTER_GIT_DIRECTORY]` to be
-   the path where you cloned Flutter's git repo:
+1. Flutter SDK를 배치 할 디렉토리를 결정하십시오. Step 3에서 이 항목이 필요합니다.
+2. `$HOME/.bash_profile` 파일을 열거나, 새로 생성하세요. 파일 경로와 파일 이름은 시스템에 따라 다를 수 있습니다.
+3. 다음 줄을 추가하고 `[PATH_TO_FLUTTER_GIT_DIRECTORY]`를 Flutter의 git repo를 복제 한 경로로 변경하세요.
 
 {% commandline %}
 export PATH=[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin:$PATH
 {% endcommandline %}
 
-4. Run `source $HOME/.bash_profile` to refresh the current window. 
+4. `source $HOME/.bash_profile`을 실행하고 현재 윈도우를 refresh 합니다.
 
-5. Verify that the `flutter/bin` directory is now in your PATH by running:
+5. 다음을 실행하여 `flutter/bin` 디렉토리가 PATH에 있는지 확인하세요.
 
 {% commandline %}
 echo $PATH
 {% endcommandline %}
 
-For more details, see [this StackExchange question](https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path).
+자세한 사항은 [this StackExchange question](https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path)을 확인해 보세요.

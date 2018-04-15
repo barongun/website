@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Get Started: Install on macOS"
+title: "시작하기: macOS에서 설치하기"
 permalink: /setup-macos/
 ---
 
@@ -13,16 +13,14 @@ permalink: /setup-macos/
 
 {% include setup/path-mac-linux.md %}
 
-## Platform setup
+## Platform 설정
 
-macOS supports developing Flutter apps for both iOS and Android. Complete at
-least one of the two platform setup steps now, to be able to build and run your
-first Flutter app.
+macOS는 iOS 및 Android 용 Flutter app 개발을 지원합니다. 첫 Flutter app을 빌드하고 실행할 수 있으려면 두 가지 플랫폼 설정 단계 중 적어도 하나를 완료하십시오.
 
 {% include setup/ios-setup.md %}
 
 {% include setup/android-setup.md %}
 
-## Next step
+## 다음 단계
 
-[Next step: Configure Editor](/get-started/editor/)
+[다음 단계: Editor 설정하기](/get-started/editor/)
