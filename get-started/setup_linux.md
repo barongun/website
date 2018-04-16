@@ -15,6 +15,6 @@ permalink: /setup-linux/
 
 {% include setup/android-setup.md %}
 
-## Next step
+## 다음 단계
 
-[Next step: Configure Editor](/get-started/editor/)
+[다음 단계: Editor 설정하기](/get-started/editor/)

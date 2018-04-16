@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Upgrading Flutter
+title: Flutter 업그레이드하기 
 permalink: /upgrading/
 ---
 

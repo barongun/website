@@ -22,11 +22,11 @@ archive](/sdk-archive/) 페이지를 확인해 주세요.)
     export PATH=`pwd`/flutter/bin:$PATH
     {% endcommandline %}
 
-위의 명령은 PATH 변수를 현재 터미널 창에 대해 임시로 설정합니다. Flutter를 경로에 영구적으로 추가하려면 [Update your path](#update-your-path)를 참조하세요.
+위의 명령은 PATH 변수를 현재 터미널 창에 대해 임시로 설정합니다. Flutter를 경로에 영구적으로 추가하려면 [경로를-변경하기](#경로를-변경하기)를 참조하세요.
 
 이제 Flutter 명령을 실행할 준비가되었습니다!
 
-기존 버전의 Flutter를 업데이트하려면 [Upgrading Flutter](/upgrading/)를 참조하십시오.
+기존 버전의 Flutter를 업데이트하려면 [Flutter 업그레이드하기](/upgrading/)를 참조하십시오.
 
 ### flutter doctor 실행하기
 
