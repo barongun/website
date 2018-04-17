@@ -1,24 +1,23 @@
 ---
 layout: page
-title: A Tour of the Flutter Widget Framework
+title: Flutter 위젯 프레임워크 둘러보기
 permalink: /widgets-intro/
 ---
 
 * TOC Placeholder
 {:toc}
 
-## Introduction
+## 소개
 
-Flutter widgets are built using a modern react-style framework, which takes
-inspiration from [React](http://facebook.github.io/react/). The central idea is
-that you build your UI out of widgets. Widgets describe what their view
-should look like given their current configuration and state. When a widget's
+Flutter 위젯은 [React](http://facebook.github.io/react/)에서 영감을 얻는 현대적인 반응형스타일 프레임 워크를 사용하여 제작되었습니다. 핵심 아이디어는 UI를 위젯에서 빌드하는 것입니다. 위젯은 현재의 설정과 상태에 따라 어떻게 표시되어야 하는지를 설명합니다. When a widget's
 state changes, the widget rebuilds its description, which the framework diffs
 against the previous description in order to determine the minimal changes
 needed in the underlying render tree to transition from one state to the next.
 
 <aside id="note" class="alert alert-info" markdown="1">
-**Note:** If you would like to become better acquainted with Flutter by diving
+**Note:** Flutter에 대해 더 잘 알고 싶다면, [Building Layouts in Flutter](/tutorials/layout/) 과 [Adding Interactivity to Your Flutter App](/tutorials/interactive/)를 추가하십시오.
+
+If you would like to become better acquainted with Flutter by diving
 into some code, check out
 [Building Layouts in Flutter](/tutorials/layout/) and
 [Adding Interactivity to Your Flutter App](/tutorials/interactive/).
